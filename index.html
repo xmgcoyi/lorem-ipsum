@@ -57,8 +57,9 @@ table {
 	border-spacing: 0;
 }
 
-body { font-family: Arial; padding: .5em}
-p {	margin:1em 0; line-height: 1.3em}
+body { font-family: Arial; padding: 1.5em}
+p {	margin:1em 0; line-height: 1.3em; text-align: justify;}
+.text-center {text-align: center;}
 p.copy-button-container { text-align: center; }
 button.copy {    
 	 padding: .5rem 1rem;
@@ -80,9 +81,26 @@ button.copy {
 }
 
 </style>
+<script type="text/javascript">
+function copy()	{
+	let range = document.createRange();
+	let start = 0;
+	let end = 0;
+
+	 let children = document.getElementById('lorem').children;
+
+	 range.setStart(children[0], 0);
+	 range.setEnd(children[++end], 0);
+	  window.getSelection().addRange(range);
+	 document.execCommand("copy");
+	 document.getElementById('result').textContent = 'Copied!';
+}
+</script>
 <body>
-<div id="lorem">
-	<p class="copy-button-container"><button class="copy">Copy!</button></p>
+	<p class="copy-button-container"><button class="copy" onclick="copy();">Copy!</button></p>
+	<p><i class="ic-chrome"></i></p>
+	<p id="result" class="text-center"></p>
+<div id="lorem">	
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elementum felis non venenatis ullamcorper. Aenean vel orci sit amet elit lacinia volutpat quis vel velit. Quisque sapien nunc, suscipit consequat nibh sagittis, pharetra sollicitudin lacus. Integer dapibus eros a turpis volutpat fringilla. Suspendisse sed commodo augue. Aliquam et lorem vel dolor vestibulum malesuada. Proin scelerisque, lorem quis placerat vestibulum, tellus mauris mollis nisi, a dictum libero nisi sit amet tellus. Mauris nec faucibus leo. Proin mollis velit et dolor eleifend dictum. Fusce dolor nulla, ultricies facilisis mollis vitae, efficitur a ex. Praesent a orci interdum, sagittis orci at, auctor est. In semper scelerisque enim vel eleifend. Suspendisse enim orci, ullamcorper et accumsan ac, convallis ac elit. Aliquam fringilla tristique pharetra. Nulla finibus metus ut odio efficitur venenatis. Fusce vitae mauris lectus.
 </p>
@@ -105,6 +123,7 @@ Mauris sed tellus in ex suscipit vulputate. Nam sed risus mi. Vestibulum cursus 
 Quisque nec feugiat lectus. Proin porta ut eros non commodo. Suspendisse potenti. Etiam euismod felis eu purus ultricies auctor. Suspendisse lacinia iaculis ullamcorper. Vivamus tempor feugiat odio, tincidunt feugiat justo malesuada eget. Cras efficitur ut neque et sodales. Sed euismod facilisis tincidunt. Curabitur vitae nisl urna. In in pulvinar mauris, non malesuada mauris. Nunc tortor mauris, commodo a sem ut, convallis congue ligula. Nullam feugiat porttitor luctus.
 </p>
 <p>
+
 Mauris at eros iaculis, aliquet nulla quis, molestie metus. Nullam varius massa sapien, nec aliquam massa semper a. Morbi semper vel urna vitae auctor. Mauris sodales quam id metus suscipit, nec scelerisque purus lacinia. Praesent venenatis turpis turpis, ut maximus orci bibendum ut. Fusce egestas scelerisque velit vehicula aliquam. Aliquam id nibh blandit, aliquet ligula a, faucibus sapien. Vivamus efficitur sem in neque varius malesuada. Praesent id posuere dolor, in suscipit erat. Sed a maximus felis, et gravida nibh. Phasellus convallis sit amet mi eget consectetur. Donec rhoncus, velit volutpat commodo imperdiet, nisl lacus vulputate massa, vel feugiat enim ipsum ac purus. Proin nec aliquam ligula. Maecenas vitae blandit purus, sit amet posuere ligula. Pellentesque mollis placerat turpis in imperdiet. Quisque dictum erat vitae ex viverra efficitur.
 </p>
 <p>
